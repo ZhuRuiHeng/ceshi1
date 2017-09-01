@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="renderer" content="webkit" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="email=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="keywords" content="海网物联、海网互联、APP开发、APP定制开发、软件开发、社交聊天APP开发、移动物联网解决方案、视频直播APP开发、视频直播APP开发、APP原生开发、原生源码" />
+    <meta name="description" content="海网物联、海网互联、APP开发、APP定制开发、软件开发、社交聊天APP开发、移动物联网解决方案、视频直播APP开发、视频直播APP开发、APP原生开发、原生源码" />
+    <title>海网物联</title>
+    <link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">  
+	<script src="http://vjs.zencdn.net/c/video.js"></script>  
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+	<!–[if lt IE 9]>   
+	    <script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>   
+	<![endif]–> 
+	<script type="text/javascript">  
+// Must come after the video.js library  
+  
+// Add VideoJS to all video tags on the page when the DOM is ready  
+VideoJS.setupAllWhenReady();//可选。不写此函数默认为显示播放控制条，鼠标移开隐藏  
+  
+/* ============= OR ============ */  
+  
+// Setup and store a reference to the player(s).  
+// Must happen after the DOM is loaded  
+// You can use any library's DOM Ready method instead of VideoJS.DOMReady  
+  
+/*  
+VideoJS.DOMReady(function(){  
+    
+  // Using the video's ID or element  
+  var myPlayer = VideoJS.setup("example_video_1");  
+    
+  // OR using an array of video elements/IDs  
+  // Note: It returns an array of players  
+  var myManyPlayers = VideoJS.setup(["example_video_1", "example_video_2", video3Element]);  
+  
+  // OR all videos on the page  
+  var myManyPlayers = VideoJS.setup("All");  
+  
+  // After you have references to your players you can...(example)  
+  myPlayer.play(); // Starts playing the video for this player.  
+});  
+*/  
+  
+/* ========= SETTING OPTIONS ========= */  
+  
+// Set options when setting up the videos. The defaults are shown here.  
+  
+/*  
+VideoJS.setupAllWhenReady({  
+  controlsBelow: false, // Display control bar below video instead of in front of  
+  controlsHiding: true, // Hide controls when mouse is not over the video  
+  defaultVolume: 0.85, // Will be overridden by user's last volume if available  
+  flashVersion: 9, // Required flash version for fallback  
+  linksHiding: true // Hide download links when video is supported  
+});  
+*/  
+  
+// Or as the second option of VideoJS.setup  
+  
+/*  
+VideoJS.DOMReady(function(){  
+  var myPlayer = VideoJS.setup("example_video_1", {  
+    // Same options  
+  });  
+});  
+*/  
+</script>  
+</head>
+<body>
+	<video id="my_video_1" class="video-js vjs-default-skin" controls preload="auto" width="275" height="200" poster="http://www.feiliu.com/zt/img/20120417/preview.jpg" data-setup="{}">  
+	    <source src="http://www.feiliu.com/zt/video/mv00.mp4" type='video/mp4'/>  
+	    <source src="http://www.feiliu.com/zt/video/test2.webm" type='video/webm'/>  
+	</video>  
+	<div class="vd">  
+    <!-- Begin VideoJS -->      
+    <div class="video-js-box">  
+    <video id="example_video_1" class="video-js" width="280" height="210" controls preload="none" poster="http://www.feiliu.com/zt/img/20120417/img01.jpg">  
+        <source src="http://www.feiliu.com/zt/video/mv01.mp4" type='video/mp4;' />  
+        <source src="http://www.feiliu.com/zt/video/test2.webm" type='video/webm'/>  
+        <object id="flash_fallback_1" class="vjs-flash-fallback" width="280" height="210" type="application/x-shockwave-flash" data="http://www.feiliu.com/zt/flash/flowplayer-3.2.1.swf">  
+        <param name="movie" value="http://www.feiliu.com/zt/flash/flowplayer-3.2.1.swf" />  
+        <param name="allowfullscreen" value="true" />  
+        <param name="flashvars" value='config={"playlist":["http://www.feiliu.com/zt/img/20120417/img01.jpg", {"url": "http://www.feiliu.com/zt/video/mv01.flv","autoPlay":false,"autoBuffering":true}]}' />  
+        <img src="http://www.feiliu.com/zt/img/20120417/img01.jpg" width="280" height="210" alt="Poster Image"  title="No video playback capabilities." />  
+      </object>  
+    </video>  
+    </div>  
+    <!-- End VideoJS -->  
+</div>  
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="hwwl" default="compile" basedir=".">
+    <!-- Define the properties, the name of the war package. -->  
+    <property name="warFileName" value="hwwl.war"></property>  
+    <target name="war">  
+        <!-- Delete the original war package. -->  
+        <delete dir="${basedir}/${warFileName}" />  
+        <!-- Create a new war file. -->  
+        <war destfile="${basedir}/${warFileName}" needxmlfile='false'>
+            <fileset dir="${basedir}">
+                <include name="**/**.*" />  
+                <exclude name=".git"/>
+                <exclude name="build.xml"/>  
+                <exclude name="${warFileName}"/> 
+            </fileset> 
+        </war>  
+    </target>
+</project>
